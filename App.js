@@ -32,6 +32,7 @@ export default class App extends Component<Props> {
       </View>
     );
   }
+  //333333333333333333
 }
 
 const styles = StyleSheet.create({
@@ -52,3 +53,6 @@ const styles = StyleSheet.create({
     marginBottom: 5,
   },
 });
+
+
+//测试222222222222222
