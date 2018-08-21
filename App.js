@@ -17,6 +17,7 @@ const instructions = Platform.select({
 type Props = {};
 //fjaojgfasga
 export default class App extends Component<Props> {
+  //99999999999999999
   render() {
     return (
       <View style={styles.container}>
@@ -32,7 +33,6 @@ export default class App extends Component<Props> {
       </View>
     );
   }
-
 }
 
 const styles = StyleSheet.create({
@@ -54,4 +54,4 @@ const styles = StyleSheet.create({
   },
 });
 
-
+//afldkjf;rkdag
