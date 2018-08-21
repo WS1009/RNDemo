@@ -6,7 +6,6 @@ import {
   Text,
   View
 } from 'react-native';
-//测试SourceTree
 const instructions = Platform.select({
   ios: 'Press Cmd+R to reload,\n' +
     'Cmd+D or shake for dev menu',
@@ -15,9 +14,7 @@ const instructions = Platform.select({
 });
 
 type Props = {};
-//fjaojgfasga
 export default class App extends Component<Props> {
-  //99999999999999999
   render() {
     return (
       <View style={styles.container}>
@@ -53,5 +50,3 @@ const styles = StyleSheet.create({
     marginBottom: 5,
   },
 });
-
-//afldkjf;rkdag
