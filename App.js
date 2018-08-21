@@ -11,7 +11,6 @@ import {
   Text,
   View
 } from 'react-native';
-//测试SourceTree
 const instructions = Platform.select({
   ios: 'Press Cmd+R to reload,\n' +
     'Cmd+D or shake for dev menu',
@@ -58,5 +57,3 @@ const styles = StyleSheet.create({
     marginBottom: 5,
   },
 });
-
-//afldkjf;rkdag
