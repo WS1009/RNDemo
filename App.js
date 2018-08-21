@@ -1,8 +1,3 @@
-/**
- * Sample React Native App
- * https://github.com/facebook/react-native
- * @flow
- */
 
 import React, { Component } from 'react';
 import {
@@ -11,7 +6,7 @@ import {
   Text,
   View
 } from 'react-native';
-
+//测试SourceTree
 const instructions = Platform.select({
   ios: 'Press Cmd+R to reload,\n' +
     'Cmd+D or shake for dev menu',
@@ -20,6 +15,7 @@ const instructions = Platform.select({
 });
 
 type Props = {};
+//测试SourceTree
 export default class App extends Component<Props> {
   render() {
     return (
