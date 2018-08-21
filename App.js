@@ -15,7 +15,7 @@ const instructions = Platform.select({
 });
 
 type Props = {};
-//测试SourceTree
+
 export default class App extends Component<Props> {
   render() {
     return (
@@ -32,7 +32,7 @@ export default class App extends Component<Props> {
       </View>
     );
   }
-  //333333333333333333
+
 }
 
 const styles = StyleSheet.create({
@@ -55,4 +55,3 @@ const styles = StyleSheet.create({
 });
 
 
-//测试222222222222222
