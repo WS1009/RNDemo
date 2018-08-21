@@ -15,7 +15,7 @@ const instructions = Platform.select({
 });
 
 type Props = {};
-
+//fjaojgfasga
 export default class App extends Component<Props> {
   render() {
     return (
