@@ -153,7 +153,7 @@ class WelcomeUI extends Component {
                 component: HomeUI,
             })
         }
-    }
+    };
 
     render() {
         const thunbsUp = '\uD83D\uDC4D';

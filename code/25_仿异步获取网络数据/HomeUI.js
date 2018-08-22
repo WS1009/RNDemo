@@ -36,7 +36,7 @@ export default class HomeUI extends Component{
     _pressButton() {
         const { navigator } = this.props;
         if(navigator) {
-            //很熟悉吧，入栈出栈~ 把当前的页面pop掉，这里就返回到了上一个页面:了
+            //很熟悉吧，入栈出栈~ 把当前的页面pop掉，这里就返回到了上一个页面了
             navigator.pop();
         }
     }
@@ -105,7 +105,6 @@ export default class HomeUI extends Component{
 
 }
 
-
 const styles = StyleSheet.create({
     container: {
         flex: 1,
@@ -132,8 +131,5 @@ const styles = StyleSheet.create({
     year: {
         textAlign: 'center',
     },
-
-
-
 });
 
