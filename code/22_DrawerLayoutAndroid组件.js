@@ -45,18 +45,9 @@ class DongFang1 extends Component {
 
 
 const styles = StyleSheet.create({
-
-
-
-
-
   flex:{
     flex:1,
   },
-
-
-
-
 });
 
 AppRegistry.registerComponent('DongFang1', () => DongFang1);

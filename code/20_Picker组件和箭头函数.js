@@ -18,7 +18,7 @@ import {
 
 
 
-class DongFang1 extends Component {
+class Pick extends Component {
 
   constructor(props){
     super(props);
@@ -26,7 +26,6 @@ class DongFang1 extends Component {
       language:null
     };
   }
-
 
   //箭头函数 ES6
 
@@ -52,34 +51,15 @@ class DongFang1 extends Component {
           </Picker>
 
           <Text>{this.state.language}</Text>
-
-
-
-
         </View>
-
     );
   }
-
-
 }
 
-
-
-
 const styles = StyleSheet.create({
-
-
-
-
-
   flex:{
     flex:1,
   },
-
-
-
-
 });
 
-AppRegistry.registerComponent('DongFang1', () => DongFang1);
+AppRegistry.registerComponent('Pick', () => Pick);
