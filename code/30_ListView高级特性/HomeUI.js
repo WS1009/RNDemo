@@ -3,7 +3,7 @@
  * https://github.com/facebook/react-native
  */
 
-import React, { Component } from 'react';
+import React, {Component} from 'react';
 import {
     AppRegistry,
     StyleSheet,
@@ -14,9 +14,7 @@ import {
     TouchableHighlight,
     RecyclerViewBackedScrollView,
     View,
-    } from 'react-native';
-
-
+} from 'react-native';
 
 
 /**
@@ -25,23 +23,20 @@ import {
  */
 var REQUEST_URL = 'https://raw.githubusercontent.com/facebook/react-native/master/docs/MoviesExample.json';
 
-class HomeUI extends Component{
+class HomeUI extends Component {
 
     constructor(props) {
         super(props);//这一句不能省略，照抄即可
         this.state = {
-            loaded:false,
-            dataSource:new ListView.DataSource({
-                rowHasChanged:(row1,row2)=> row1 !== row2,
+            loaded: false,
+            dataSource: new ListView.DataSource({
+                rowHasChanged: (row1, row2) => row1 !== row2,
             }),
         };
     }
 
 
-
-
-
-    render(){
+    render() {
         if (!this.state.loaded) {
 
             return this.renderLoadingView();
@@ -52,19 +47,14 @@ class HomeUI extends Component{
         //var movie = this.state.movies[0];
         //return this.renderMovie(movie);
 
-        return(
-
-
-                <ListView
-                    dataSource={this.state.dataSource}
-                    renderRow={this.renderMovie}
-                    contentContainerStyle={styles.list}
-                    style={styles.listView}
-                    />
-
-
+        return (
+            <ListView
+                dataSource={this.state.dataSource}
+                renderRow={this.renderMovie}
+                contentContainerStyle={styles.list}
+                style={styles.listView}
+            />
         );
-
     }
 
 
@@ -79,7 +69,7 @@ class HomeUI extends Component{
     }
 
 
-    _pressText(){
+    _pressText() {
         alert('点击了');
     }
 
@@ -91,15 +81,8 @@ class HomeUI extends Component{
                 <Image
                     source={{uri: movie.posters.thumbnail}}
                     style={styles.thumbnail}
-
-
-                    />
-
-
+                />
                 <Text style={styles.year} onPress={this._pressText}>年份{movie.year}</Text>
-
-
-
             </View>
         );
     }
@@ -117,7 +100,7 @@ class HomeUI extends Component{
             .then((responseData) => {
                 this.setState({
                     dataSource: this.state.dataSource.cloneWithRows(responseData.movies),
-                    loaded:true,
+                    loaded: true,
                 });
             })
             .done();
@@ -139,8 +122,8 @@ const styles = StyleSheet.create({
         width: 100,
         height: 100,
         backgroundColor: '#F5FCFF',
-        margin:5,
-        alignItems:'center',
+        margin: 5,
+        alignItems: 'center',
     },
     listView: {
         paddingTop: 20,
@@ -149,7 +132,7 @@ const styles = StyleSheet.create({
     thumbnail: {
         width: 80,
         height: 80,
-        borderRadius:16,
+        borderRadius: 16,
 
 
     },
@@ -157,8 +140,8 @@ const styles = StyleSheet.create({
 
     container1: {
         flex: 1,
-        justifyContent:'center',
-        alignItems:'center',
+        justifyContent: 'center',
+        alignItems: 'center',
     },
     title: {
         fontSize: 14,
@@ -171,7 +154,6 @@ const styles = StyleSheet.create({
     },
 
 
-
 });
 
-module.exports=HomeUI;
+module.exports = HomeUI;
