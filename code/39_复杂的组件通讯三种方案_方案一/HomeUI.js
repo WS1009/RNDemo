@@ -73,8 +73,6 @@ const Model = [
 
 export default class HomeUI extends Component {
 
-
-
     _pressButton() {
         const { navigator } = this.props;
         if (navigator) {
@@ -83,21 +81,11 @@ export default class HomeUI extends Component {
         }
     }
 
-
-
     render() {
-
-
         return (
             <List navigator={this.props.navigator} />
         );
-
-
     }
-
-
-
-
 }
 
 
@@ -111,7 +99,6 @@ class Item extends Component {
         url: React.PropTypes.string.isRequired,
         title: React.PropTypes.string.isRequired,
     };  // 注意这里有分号
-
 
     render() {
         return (
@@ -131,7 +118,6 @@ class Item extends Component {
     }
 }
 
-
 class List extends Component {
 
     constructor(props) {
@@ -141,7 +127,6 @@ class List extends Component {
             count: 0,
         };
     }
-
 
     shouldComponentUpdate() {
         console.log('List----shouldComponentUpdate');
@@ -192,9 +177,6 @@ class List extends Component {
                 );
 
             }
-
-
-
         };
 
         // Observe focus change events from this component.
@@ -232,10 +214,7 @@ class List extends Component {
                             press={this.press.bind(this, Model[parseInt(i) + 1]) }
                             ></Item>
 
-
                     </View>
-
-
                 );
                 list.push(row);
 
@@ -249,7 +228,6 @@ class List extends Component {
             str = ',共' + count + '件商品';
         }
 
-
         return (
             <ScrollView style={{ marginTop: 10 }}>
                 {list}
@@ -258,8 +236,6 @@ class List extends Component {
 
             </ScrollView>
         );
-
-
     }
 
 
@@ -293,9 +269,6 @@ class List extends Component {
                 //alert('保存成功');
             }
         });
-
-
-
     }
 
 
@@ -307,12 +280,7 @@ class List extends Component {
             let r = Math.random() * 16 | 0, v = c == 'x' ? r : (r & 0x3 | 0x8);
             return v.toString(16);
         }).toUpperCase();
-
-
-
-
     }
-
 
     componentDidMount() {
         let _that = this;

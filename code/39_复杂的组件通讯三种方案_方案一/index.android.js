@@ -34,7 +34,6 @@ const IMAGE_URIS = [
   'https://ss0.bdstatic.com/5aV1bjqh_Q23odCf/static/superman/img/logo/bd_logo1_31bdc765.png',
 ];
 
-
 class ProgressBar extends Component {
   //进度条组件
   constructor(props) {
@@ -44,8 +43,6 @@ class ProgressBar extends Component {
   render() {
     //当前位置+偏移量
     var fractionalPosition = (this.props.progress.position + this.props.progress.offset);
-
-
 
     var progressBarSize = (fractionalPosition / (PAGES - 1)) * this.props.size;
     return (
@@ -60,8 +57,6 @@ class ProgressBar extends Component {
     );
   }
 }
-
-
 
 
 class WelcomeUI extends Component {
@@ -90,11 +85,7 @@ class WelcomeUI extends Component {
 
     //this.setState=this.setState.bind(this);
 
-
   }
-
-
-
 
 
   //getInitialState(){
@@ -109,17 +100,11 @@ class WelcomeUI extends Component {
   //}
 
 
-
   onPageSelected = (e) => {
     //这个回调会在页面切换完成后（当用户在页面间滑动）调用
     //回调参数中的event.nativeEvent对象
     this.setState({ page: e.nativeEvent.position });
   }
-
-
-
-
-
 
 
   //onPageScroll(e){
@@ -319,8 +304,6 @@ class DfyProject01 extends Component {
             return <Component {...route.params} navigator={navigator} />
           }
         } />
-
-
     );
   }
 }
@@ -371,8 +354,6 @@ const styles = StyleSheet.create({
     color: 'white',
   },
 });
-
-
 
 
 AppRegistry.registerComponent('DfyProject01', () => DfyProject01);
