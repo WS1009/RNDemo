@@ -137,7 +137,6 @@ const styles = StyleSheet.create({
 
     },
     //让rightContainer在父容器中占据Image之外剩下的全部空间。
-
     container1: {
         flex: 1,
         justifyContent: 'center',
