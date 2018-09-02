@@ -3,7 +3,7 @@
  * https://github.com/facebook/react-native
  */
 
-import React, { Component } from 'react';
+import React, {Component} from 'react';
 import {
     AppRegistry,
     StyleSheet,
@@ -71,41 +71,25 @@ const Model = [
 
 export default class HomeUI extends Component {
 
-
-
     _pressButton() {
-        const { navigator } = this.props;
+        const {navigator} = this.props;
         if (navigator) {
             //很熟悉吧，入栈出栈~ 把当前的页面pop掉，这里就返回到了上一个页面:了
             navigator.pop();
         }
     }
 
-
-
     render() {
-
-
         return (
-            <List navigator={this.props.navigator} />
+            <List navigator={this.props.navigator}/>
         );
-
-
     }
-
-
-
-
-
-
-
-
 }
 
 
 class Item extends Component {
 
- static defaultProps = {
+    static defaultProps = {
         url: 'https://gss0.bdstatic.com/5eR1dDebRNRTm2_p8IuM_a/res/img/richanglogo168_24.png',
         title: '默认标题',
     };  // 注意这里有分号
@@ -120,9 +104,9 @@ class Item extends Component {
             <View style={styles.item}>
                 <TouchableOpacity onPress={this.props.press}>
                     <Image resizeMode='contain'
-                        style={styles.img}
-                        source={{ uri: this.props.url }}
-                        >
+                           style={styles.img}
+                           source={{uri: this.props.url}}
+                    >
 
                         <Text numberOfLines={1} style={styles.item_text}>{this.props.title}</Text>
 
@@ -154,26 +138,19 @@ class List extends Component {
                 let row = (
                     <View style={styles.row} key={i}>
                         <Item title={Model[i].title}
-                            url={Model[i].url}
-                            press={this.press.bind(this, Model[i]) }
+                              url={Model[i].url}
+                              press={this.press.bind(this, Model[i])}
 
-                            ></Item>
-
+                        ></Item>
 
                         <Item title={Model[parseInt(i) + 1].title}
-                            url={Model[parseInt(i) + 1].url}
-                            press={this.press.bind(this, Model[parseInt(i) + 1]) }
-                            ></Item>
-
-
+                              url={Model[parseInt(i) + 1].url}
+                              press={this.press.bind(this, Model[parseInt(i) + 1])}
+                        ></Item>
                     </View>
-
-
                 );
                 list.push(row);
-
             }
-
         }
 
         let count = this.state.count;
@@ -184,21 +161,17 @@ class List extends Component {
 
 
         return (
-            <ScrollView style={{ marginTop: 10 }}>
+            <ScrollView style={{marginTop: 10}}>
                 {list}
-                <Text onPress={this.goGouWu.bind(this) } style={styles.btn}>去结算{str}</Text>
-
-
+                <Text onPress={this.goGouWu.bind(this)} style={styles.btn}>去结算{str}</Text>
             </ScrollView>
         );
-
-
     }
 
 
     goGouWu() {
         //alert('点击了去购物车');
-        const { navigator } = this.props;
+        const {navigator} = this.props;
         //为什么这里可以取得 props.navigator?请看上文:
         //<Component {...route.params} navigator={navigator} />
         //这里传递了navigator作为props
@@ -226,24 +199,15 @@ class List extends Component {
                 //alert('保存成功');
             }
         });
-
-
-
     }
-
 
     //生成随机ID：GUID 全局唯一标识符（GUID，Globally Unique Identifier）是一种由算法生成的二进制长度为128位的数字标识符
     //GUID生成的代码来自于Stoyan Stefanov
-
     genId() {
-         return 'xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx'.replace(/[xy]/g, function(c) {
-        let r = Math.random()*16|0, v = c == 'x' ? r : (r&0x3|0x8);
-        return v.toString(16);
-    }).toUpperCase();
-
-
-
-
+        return 'xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx'.replace(/[xy]/g, function (c) {
+            let r = Math.random() * 16 | 0, v = c == 'x' ? r : (r & 0x3 | 0x8);
+            return v.toString(16);
+        }).toUpperCase();
     }
 
 
@@ -264,25 +228,14 @@ class List extends Component {
                     //给用户提示错误信息
                     console.log(err);
                 } else {
-                    console.log('读取成功了的个数：'+keys.toString());
+                    console.log('读取成功了的个数：' + keys.toString());
                 }
                 _that.setState({
-
                     count: keys.length,
                 });
             }
         );
     }
-
-
-
-
-
-
-
-
-
-
 }
 
 
@@ -323,18 +276,15 @@ class GouWu extends Component {
         }
 
 
-
         return (
-            <ScrollView style={{ marginTop: 10 }}>
+            <ScrollView style={{marginTop: 10}}>
                 {list}
 
                 <Text style={styles.btn}>支付{str}</Text>
-                <Text style={styles.clear} onPress={this.clearStorage.bind(this) }>清空购物车</Text>
+                <Text style={styles.clear} onPress={this.clearStorage.bind(this)}>清空购物车</Text>
 
             </ScrollView>
         );
-
-
     }
 
 
@@ -360,8 +310,6 @@ class GouWu extends Component {
                             data: arr,
                         }
                     );
-
-
                 });
             }
         );
@@ -380,13 +328,10 @@ class GouWu extends Component {
             }
         });
     }
-
-
 }
 
 
 const styles = StyleSheet.create({
-
 
     list_item: {
         marginLeft: 5,
@@ -502,7 +447,6 @@ const styles = StyleSheet.create({
         fontSize: 14,
 
     },
-
 
 
 });

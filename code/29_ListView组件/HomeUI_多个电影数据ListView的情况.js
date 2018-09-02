@@ -3,18 +3,18 @@
  * https://github.com/facebook/react-native
  */
 
-import React, { Component } from 'react';
+import React, {Component} from 'react';
 import {
     AppRegistry,
     StyleSheet,
     Text,
-   ScrollView,
+    ScrollView,
     Image,
     ListView,
     TouchableHighlight,
     RecyclerViewBackedScrollView,
     View,
-    } from 'react-native';
+} from 'react-native';
 
 //var MOCKED_MOVIES_DATA = [
 //    {title: '标题', year: '2015', posters: {thumbnail: 'http://i.imgur.com/UePbdph.jpg'}},
@@ -27,27 +27,27 @@ import {
  */
 var REQUEST_URL = 'https://raw.githubusercontent.com/facebook/react-native/master/docs/MoviesExample.json';
 
-class HomeUI extends Component{
+class HomeUI extends Component {
 
     constructor(props) {
         super(props);//这一句不能省略，照抄即可
         this.state = {
-            loaded:false,
-            dataSource:new ListView.DataSource({
-                rowHasChanged:(row1,row2)=> row1 !== row2,
+            loaded: false,
+            dataSource: new ListView.DataSource({
+                rowHasChanged: (row1, row2) => row1 !== row2,
             }),
         };
     }
 
     _pressButton() {
-        const { navigator } = this.props;
-        if(navigator) {
+        const {navigator} = this.props;
+        if (navigator) {
             //很熟悉吧，入栈出栈~ 把当前的页面pop掉，这里就返回到了上一个页面:了
             navigator.pop();
         }
     }
 
-    render(){
+    render() {
         if (!this.state.loaded) {
             //如果movies==null的情况 初始情况  渲染加载视图
             return this.renderLoadingView();
@@ -57,12 +57,12 @@ class HomeUI extends Component{
         //var movie = this.state.movies[0];
         //return this.renderMovie(movie);
 
-        return(
+        return (
             <ListView
                 dataSource={this.state.dataSource}
                 renderRow={this.renderMovie}
                 style={styles.listView}
-                />
+            />
         );
 
     }
@@ -79,7 +79,6 @@ class HomeUI extends Component{
     }
 
 
-
 //这是渲染一个电影信息
     renderMovie(movie) {
         return (
@@ -87,7 +86,7 @@ class HomeUI extends Component{
                 <Image
                     source={{uri: movie.posters.thumbnail}}
                     style={styles.thumbnail}
-                    />
+                />
                 <View style={styles.rightContainer}>
                     <Text style={styles.title}>{movie.title}</Text>
                     <Text style={styles.year}>{movie.year}</Text>
@@ -110,7 +109,7 @@ class HomeUI extends Component{
             .then((responseData) => {
                 this.setState({
                     dataSource: this.state.dataSource.cloneWithRows(responseData.movies),
-                    loaded:true,
+                    loaded: true,
                 });
             })
             .done();
@@ -153,7 +152,6 @@ const styles = StyleSheet.create({
     },
 
 
-
 });
 
-module.exports=HomeUI;
+module.exports = HomeUI;
